@@ -16,15 +16,16 @@ function threeD() {
     const geometry = new THREE.BoxGeometry();
     const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
     const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);    
+    scene.add(cube);
 
-    animate(cube, renderer, scene, camera);
+    function animate(){
+        requestAnimationFrame(animate);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        
+        renderer.render(scene, camera);
+    }
+
+    animate();
 }
 
-function animate(cube, renderer, scene, camera) {
-    requestAnimationFrame(animate);
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    
-    renderer.render(scene, camera);
-}
