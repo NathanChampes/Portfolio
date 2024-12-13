@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log("ok");
+    threeD();
 });
 
 function threeD() {
